@@ -1,0 +1,2 @@
+# IRD_WES_Variant_Prioritisation
+Reproducible bioinformatics workflow for priorisation of candidate variants
