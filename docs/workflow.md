@@ -26,17 +26,15 @@ The same filtering logic was applied independently to each sample.
 
 ## CADD scoring
 
-Following RetNet gene-list intersection, retained variants were reformatted for submission to the CADD web interface.
+Following RetNet intersection, retained variants were reformatted into a
+five-column VCF-like file containing chromosome, position, ID, reference
+allele and alternate allele.
 
-The GRCh37 genome build was selected to maintain consistency with the hg19/GRCh37 coordinates of the supplied ANNOVAR data.
+CADD scoring was performed externally using the CADD web interface
+(https://cadd.bihealth.org/score), with GRCh37 and CADD v1.7 selected.
 
-CADD scoring was performed externally using the CADD web interface. The scored output files were downloaded and returned to the computational environment for subsequent filtering.
-
-CADD PHRED thresholds of >10, >20 and >30 were examined. A PHRED threshold of >30 was used to define the high-priority candidate set for subsequent analysis.
-
-CADD was used as a prioritisation tool rather than as independent evidence of pathogenicity.
-
-Because CADD scoring was performed through the web interface, this stage was not executed directly within the shell scripts contained in this repository.
+The resulting compressed TSV output was downloaded and returned to the
+computational environment for subsequent processing and filtering.
 
 ## Genotype and zygosity retrieval
 
